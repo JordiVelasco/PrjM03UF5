@@ -8,11 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
-/**
- * Classe Controladora FXML
- * @author sergi grau
- * @version 1.0 8/02/2014
- */
 public class LoginController implements Initializable {
 
     /**
