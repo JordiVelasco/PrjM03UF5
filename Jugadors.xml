@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<partidas>
+       <partida>
+              <codigo>01</codigo>
+              <nombre>Juanito</nombre>
+              <tiempo>45</tiempo>
+       </partida>
+       <partida>
+              <codigo>02</codigo>
+              <nombre>Pablito</nombre>
+              <tiempo>21</tiempo>
+       </partida>
+</partidas>
+

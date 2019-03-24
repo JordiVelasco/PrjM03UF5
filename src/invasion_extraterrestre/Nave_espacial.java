@@ -1,11 +1,12 @@
 package invasion_extraterrestre;
 
 
+import java.util.Comparator;
 
-public class Nave_espacial extends Graficos {
+public class Nave_espacial extends Graficos implements Comparator<Nave_espacial> {
 
     Juego juego;
-    String name = "Halcón Milenario";
+    String name;
 
 
     public Nave_espacial(Juego juego,String imagen,int x,int y)
@@ -15,12 +16,20 @@ public class Nave_espacial extends Graficos {
         this.juego = juego;
     }
 
+    public Nave_espacial(String name, String imagen,int x,int y)
+    {
+        super(imagen,x,y);
+
+        this.name = name;
+    }
+
     public Nave_espacial(String imagen,int x,int y)
     {
         super(imagen,x,y);
 
-        this.juego = juego;
+        this.name = name;
     }
+
 
     @Override
     public void mover(long valor) {
@@ -50,4 +59,14 @@ public class Nave_espacial extends Graficos {
             juego.notificar_perdedor();
         }
     }
-}
+
+    @Override
+    public int compare(Nave_espacial o1, Nave_espacial o2) {
+
+        Nave_espacial s1=(Nave_espacial)o1;
+        Nave_espacial s2=(Nave_espacial)o2;
+
+        return s1.name.compareTo(s2.name);
+        }
+
+    }

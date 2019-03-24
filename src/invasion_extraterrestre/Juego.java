@@ -2,7 +2,13 @@ package invasion_extraterrestre;
 
 
 
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
 import javax.swing.JFrame;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -10,6 +16,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
+import java.io.File;
 import java.util.ArrayList;
 
 
@@ -281,6 +288,9 @@ public class Juego extends Canvas { //hereda de canvas
 
     public static void main(String argv[])
     {
+
+        // ---------------------------------------------------Clase generica-------------------------------------------------------------------------------------
+
         ClasseGenerica<Alien> alienX= new ClasseGenerica<>(50);
         ClasseGenerica<Nave_espacial> naveX= new ClasseGenerica<>(10);
 
@@ -290,10 +300,33 @@ public class Juego extends Canvas { //hereda de canvas
 
         alienX.add(alien2);
         naveX.add(nave2);
-        System.out.println(alienX.getTope());
-        System.out.println(naveX.getTope());
+        System.out.println("CLASE GENERICA   " + alienX.getTope());
+        System.out.println("CLASE GENERICA   " + naveX.getTope());
 
 
-        new Juego().controlar_juego(); //instanciamos la clase juego y llamamos al metodo controlar juego
+        // ------------------------------------------------------------------ comparable ------------------------------------------------------------------------
+
+        Misil m1 = new Misil(50,"imagenes/misil.gif",10,10);
+        Misil m2 = new Misil(50,"imagenes/misil.gif",10,10);
+        Misil m3 = new Misil(85,"imagenes/misil.gif",10,10);
+
+
+        System.out.println("COMPRABLE A   " + m1.compareTo(m2));
+        System.out.println("COMPRABLE B   " + m1.compareTo(m3));
+
+
+        // ------------------------------------------------------------------ comparator ------------------------------------------------------------------------
+
+        Nave_espacial n1 = new Nave_espacial("Halcon","imagenes/misil.gif",10,10);
+        Nave_espacial n2 = new Nave_espacial("Halcon","imagenes/misil.gif",10,10);
+        Nave_espacial n3 = new Nave_espacial("Halcon Mil","imagenes/misil.gif",10,10);
+
+
+        System.out.println("COMPARATOR A    "+n2.compare(n1,n2));
+        System.out.println("COMPARATOR B    "+n2.compare(n1,n3));
+
+
+
+       new Juego().controlar_juego(); //instanciamos la clase juego y llamamos al metodo controlar juego
     }
 }

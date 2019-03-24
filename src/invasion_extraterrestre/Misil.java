@@ -1,9 +1,11 @@
 package invasion_extraterrestre;
 
 
-public class Misil extends Graficos {
+public class Misil extends Graficos implements Comparable<Misil>{
 
     double desplazamiento = -300;
+
+    int potencia;
 
     Juego juego;
 
@@ -18,7 +20,13 @@ public class Misil extends Graficos {
         desplazamiento_fila = desplazamiento; //desplazamiento fila variable graficos controla la velocidad
     }
 
+    public Misil(int potencia, String imagen, int x, int y) {
+        super(imagen, x, y);
 
+        this.potencia = potencia;
+
+        desplazamiento_fila = desplazamiento; //desplazamiento fila variable graficos controla la velocidad
+    }
     @Override
     public void mover(long valor) {
 
@@ -42,5 +50,16 @@ public class Misil extends Graficos {
 
             misil_disparado = true;
         }
+    }
+
+    public void setPotencia(int potencia) {
+        this.potencia = potencia;
+    }
+
+    @Override
+    public int compareTo(Misil t) {
+        if (this.potencia == t.potencia)		return 0;
+        else if (this.potencia > t.potencia)	return 1;
+        else 							        return -1;
     }
 }

@@ -16,6 +16,8 @@ public class LoginFXML extends Application {
 
     public static void main(String[] args) {
         Application.launch(LoginFXML.class, args);
+
+
     }
 
     @Override
