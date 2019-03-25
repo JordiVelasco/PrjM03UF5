@@ -76,7 +76,7 @@ public class Juego extends Canvas { //hereda de canvas
                 System.out.println(((Alien) alien).Chillar());
             }
         }
-       System.out.println(Alien.AsignarNombre(num_aliens));
+       System.out.println(Alien.AsignarNombre());
     }
 
     public void notificar_perdedor(){ //notificar el perdedor
