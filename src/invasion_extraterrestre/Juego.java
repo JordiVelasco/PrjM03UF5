@@ -80,7 +80,7 @@ public class Juego extends Canvas { //hereda de canvas
     }
 
     public void notificar_perdedor(){ //notificar el perdedor
-        mensaje = "HAS PERDIDO INSIGNIFICANTE TERRÍCOLA"; //asignamos el mensaje
+        mensaje = "HAS PERDIDO, SUCIO TERRICOLA"; //asignamos el mensaje
         tecla_no_pulsada = true; //ponemos true ya sabemos que cuando se pulse de nuevo una tecla se iniciara un nuevo juego
     }
 
