@@ -22,10 +22,10 @@ public class Alien extends Graficos implements IAlien {
         desplazamiento_columna = -75; //variable de graficos que controla el desplazamiento horizontal de las imagenes
     }
 
-    public static String AsignarNombre(int aliens){
+    public static String AsignarNombre(){
 
-        for (int i = 0; i < aliens ; i++) {
-            name="Alien Numero "+ i;
+        int random = (int )(Math.random() * 50 + 1);
+        name = "Patrulla " + random;
 
         }
     return name;
