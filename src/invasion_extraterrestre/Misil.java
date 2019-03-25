@@ -44,6 +44,9 @@ public class Misil extends Graficos implements Comparable<Misil>{
 
         if (grafico instanceof Alien)  // si el misil se topa con la imagen alien hacemos:
         {
+                
+            //grafico.Chillar();
+            
             juego.lista_eliminados.add(grafico); //lo añadimos a lista eliminados
 
             juego.descontar_eliminados(); // los escuenta para que no aparezcan
